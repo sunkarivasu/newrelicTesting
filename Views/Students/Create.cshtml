@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div>
+    @using (Html.BeginForm("Create", "Students", FormMethod.Post, new { enctype = "multipart/form-data", id = "create-student-form" }))
+    {
+        <div class="form-group">
+            <label>Name</label>
+            @Html.TextBox("Name","",new {@class="form-control", @placeholder="Enter The Name"})
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            @Html.DropDownList("Gender", new List<SelectListItem> {
+                new SelectListItem(){Text = "Male", Value = "Male"},
+                new SelectListItem(){Text = "Female", Value = "Female"},
+                new SelectListItem(){Text = "None", Value = "None"}
+            }, new {@class = "form-control"})
+        </div>
+        <div>
+            <button class="btn btn-success" type="submit"> Create</button>
+        </div>
+        
+    }
+</div>
