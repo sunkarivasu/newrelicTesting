@@ -18,11 +18,11 @@ builder.Host.ConfigureLogging(logging =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.Configure<AzureFileLoggerOptions>(options => {
-    options.FileName = "logs-";
-    options.FileSizeLimit = 50 * 1024;
-    options.RetainedFileCountLimit = 5;
-});
+//builder.Services.Configure<AzureFileLoggerOptions>(options => {
+//    options.FileName = "logs-";
+//    options.FileSizeLimit = 50 * 1024;
+//    options.RetainedFileCountLimit = 5;
+//});
 
 //Configure logging to Azure filesystem
 builder.Logging.AddAzureWebAppDiagnostics();
